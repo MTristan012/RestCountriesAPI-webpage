@@ -1,5 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
 const newE = (tag) => document.createElement(tag);
+
 const countries = $("#container");
 const searchCountry = $("#searchCountry");
 
