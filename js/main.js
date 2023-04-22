@@ -5,3 +5,6 @@ console.log(data.filterCountry)
 console.log(data.filterRegion);
 
 
+const datos = await data.data;
+
+dom.manifesCard(datos);

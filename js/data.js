@@ -1,3 +1,10 @@
+const getData = async () => {
+  return fetch(`https://restcountries.com/v3.1/all`)
+    .then((response) => response.json())
+    .then((response) => response)
+    .catch((error) => error);
+};
+
 const getDataCountry = async (country) => {
   return fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then((response) => response.json())
@@ -17,12 +24,12 @@ const countryFilter = (data) => {
   return cities;
 };
 
-const filterCountry = await getDataCountry("peru")
-const filterRegion = await getDataRegion("america")
+const filterCountry = await getDataCountry("peru");
+const filterRegion = await getDataRegion("america");
+const data = await getData()
 
 export default {
-    filterCountry,
-    filterRegion,
+  data,
+  filterCountry,
+  filterRegion,
 };
-
-
