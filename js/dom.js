@@ -1,6 +1,7 @@
 const $ = (selector) => document.querySelector(selector);
 const newE = (tag) => document.createElement(tag);
-const countries = $("#container")
+const countries = $("#container");
+const searchCountry = $("#searchCountry");
 
 const generateCard = (country) => {
   const div = newE("div");
@@ -39,15 +40,20 @@ const generateCard = (country) => {
 };
 
 const manifesCard = (card) => {
-  countries.innerHTML = "";
-  card.forEach((element) => {
-    const cards = generateCard(element);
-    countries.appendChild(cards);
-  });
+  if (searchCountry.value == "") {
+    countries.innerHTML = "";
+    card.forEach((element) => {
+      const cards = generateCard(element);
+      countries.appendChild(cards);
+    });
+  }else{
+    
+    console.log(searchCountry.value);
+  }
 };
 
-export default{
-    $,
-    generateCard,
-    manifesCard,
-}
+export default {
+  $,
+  generateCard,
+  manifesCard,
+};

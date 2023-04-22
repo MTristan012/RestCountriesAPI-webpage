@@ -13,7 +13,6 @@ darkBtn.addEventListener("click", () => {
 })
 
 const region = await data.getDataRegion("Americas")
-console.log(region)
 
 const datos = await data.data;
 
