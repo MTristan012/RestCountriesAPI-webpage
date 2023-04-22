@@ -4,20 +4,20 @@ const countries = $("#container")
 
 const generateCard = (country) => {
   const div = newE("div");
-  div.className = "card border border-0 mt-4";
+  div.className = "card border border-0 bg-body-tertiary shadow p-0";
   div.innerHTML = `
     <div class="card-img">
       <img
-        class=""
+        class="card-img-top"
         src=${country.flags.png}
         alt=${country.flags.alt ? country.flags.alt : " "}
       />
     </div>
-    <div class="card-body">
+    <div class="card-body text-start">
       <div class="">
-        <div class="fs-2 fw-bold">
+        <p class="fs-5 fw-bold">
           ${country.name.common}
-        </div>
+        </p>
         <div>
           <p>
             <span class="fw-semibold">Populations: </span>

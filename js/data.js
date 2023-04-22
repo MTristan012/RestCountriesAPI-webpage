@@ -25,11 +25,11 @@ const countryFilter = (data) => {
 };
 
 const filterCountry = await getDataCountry("peru");
-const filterRegion = await getDataRegion("america");
+
 const data = await getData()
 
 export default {
   data,
   filterCountry,
-  filterRegion,
+  getDataRegion,
 };
