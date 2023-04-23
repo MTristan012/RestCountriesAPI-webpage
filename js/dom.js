@@ -4,6 +4,8 @@ const newE = (tag) => document.createElement(tag);
 const countries = $("#container");
 
 const generateCard = (country) => {
+    let num = country.population
+    let formatNum = num.toLocaleString('es-Es', {useGrouping: true})
   const div = newE("div");
   div.className = "card border border-0 bg-body-tertiary shadow p-0";
   div.innerHTML = `
@@ -22,7 +24,7 @@ const generateCard = (country) => {
         <div>
           <p>
             <span class="fw-semibold">Populations: </span>
-            <span>${country.population}</span>
+            <span>${formatNum}</span>
           </p>
           <p>
             <span class="fw-semibold">Region: </span>
