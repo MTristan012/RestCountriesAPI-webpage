@@ -41,16 +41,11 @@ const generateCard = (country) => {
 };
 
 const manifesCard = (card) => {
-  if (searchCountry.value == "") {
     countries.innerHTML = "";
     card.forEach((element) => {
-      const cards = generateCard(element);
-      countries.appendChild(cards);
+    const cards = generateCard(element);
+    countries.appendChild(cards);
     });
-  }else{
-    
-    console.log(searchCountry.value);
-  }
 };
 
 export default {

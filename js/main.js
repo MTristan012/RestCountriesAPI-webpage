@@ -13,8 +13,6 @@ const region4 = await data.getDataRegion(regions[3]);
 const region5 = await data.getDataRegion(regions[4]);
 const searchCountry = dom.$("#searchCountry")
 
-dom.manifesCard(datos);
-
 darkBtn.addEventListener("click", () => {
     if (html.dataset.bsTheme == "light"){
         html.dataset.bsTheme = "dark";
@@ -46,6 +44,5 @@ searchCountry.addEventListener("input", function(){
     const filteredData = datos.filter((country) =>
       country.name.common.includes(searchValue)
     );
-    console.log(filteredData)
     dom.manifesCard(filteredData);
 })
