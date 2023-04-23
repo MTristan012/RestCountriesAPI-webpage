@@ -42,6 +42,10 @@ searchRegion.addEventListener("change", function () {
 });
 
 searchCountry.addEventListener("input", function(){
-    const country = searchCountry.value.trim().toLowerCase()
-    console.log(country)
+    let searchValue = searchCountry.value
+    const filteredData = datos.filter((country) =>
+      country.name.common.includes(searchValue)
+    );
+    console.log(filteredData)
+    dom.manifesCard(filteredData);
 })
