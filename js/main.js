@@ -11,6 +11,7 @@ const region2 = await data.getDataRegion(regions[1]);
 const region3 = await data.getDataRegion(regions[2]);
 const region4 = await data.getDataRegion(regions[3]);
 const region5 = await data.getDataRegion(regions[4]);
+const searchCountry = dom.$("#searchCountry")
 
 dom.manifesCard(datos);
 
@@ -40,6 +41,7 @@ searchRegion.addEventListener("change", function () {
     
 });
 
-
-
-
+searchCountry.addEventListener("input", function(){
+    const country = searchCountry.value.trim().toLowerCase()
+    console.log(country)
+})

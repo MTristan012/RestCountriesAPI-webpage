@@ -19,17 +19,10 @@ const getDataRegion = async (region) => {
     .catch((error) => error);
 };
 
-const countryFilter = (data) => {
-  let cities = data.filter((location) => location.city);
-  return cities;
-};
-
-const filterCountry = await getDataCountry("peru");
-
 const data = await getData()
 
 export default {
   data,
-  filterCountry,
+  getDataCountry,
   getDataRegion,
 };
