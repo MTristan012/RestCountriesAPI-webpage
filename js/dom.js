@@ -4,12 +4,12 @@ const newE = (tag) => document.createElement(tag);
 const countries = $("#container");
 
 const generateCard = (country) => {
-  let num = country.population
-  let formatNum = num.toLocaleString('es-Es', {useGrouping: true})
+  let num = country.population;
+  let formatNum = num.toLocaleString("es-Es", { useGrouping: true });
   const div = newE("div");
   div.className = "card border border-0 bg-body-tertiary shadow p-0 cardID";
-  div.setAttribute("id", country.name.common)
-  div.setAttribute("type", "button")
+  div.setAttribute("id", country.name.common);
+  div.setAttribute("type", "button");
   div.innerHTML = `
     <div class="card-img" >
       <img
@@ -44,41 +44,62 @@ const generateCard = (country) => {
 };
 
 const manifesCard = (card) => {
-    countries.innerHTML = "";
-    card.forEach((element) => {
+  countries.innerHTML = "";
+  card.forEach((element) => {
     const cards = generateCard(element);
     countries.appendChild(cards);
-    });
+  });
 };
 
 const masterCard = (city) => {
-  const mCard = $("#masterCard")
-  mCard.innerHTML = ""
-  let num = city.population;
+  let num = city[0].population;
   let formatNum = num.toLocaleString("es-Es", { useGrouping: true });
   const div = newE("div");
   div.className = "card mb-3";
   div.innerHTML = `
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="${city.flags.png}" class="img-fluid rounded-start" alt="${
-    country.flags.alt ? country.flags.alt : " "
+        <img src="${city[0].flags.png}" class="img-fluid rounded-start" alt="${
+    city[0].flags.alt ? city[0].flags.alt : " "
   }">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">${country.name.common}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <div class="">
+            <p class="fs-5 fw-bold">
+              ${city[0].name.common}
+            </p>
+            <div>
+              <p>
+                <span class="fw-semibold">Populations: </span>
+                <span>${formatNum}</span>
+              </p>
+              <p>
+                <span class="fw-semibold">Region: </span>
+                <span>${city[0].region}</span>
+              </p>
+              <p>
+                <span class="fw-semibold">Capital: </span>
+                <span>${city[0].capital}</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   `;
-  mCard.innerHTML = div.innerHTML
+  return div;
+};
+
+const manifestMasterCard = (card) => {
+  const masterCardID = $("#masterCard");
+  masterCardID.innerHTML = ""
+  masterCardID.appendChild(masterCard(card))
 }
 
 export default {
   $,
   generateCard,
   manifesCard,
+  manifestMasterCard,
 };

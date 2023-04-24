@@ -72,7 +72,8 @@ function addClickEventToCards() {
       cardID = card.id;
       dom.$("#principal").style.display = "none";
       dom.$("#secondary").style.display = "block";
-      console.log(card.id)
+      const country = datos.filter((city) => city.name.common == card.id)
+      dom.manifestMasterCard(country)
     });
   });
   return cardID
