@@ -97,4 +97,3 @@ function addClickEventToMasterCard() {
 
 addClickEventToCards()
 addClickEventToMasterCard();
-console.log(cardID + "1")

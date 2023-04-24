@@ -140,9 +140,7 @@ const borderCountryBTN = (city) => {
   const borders = $("#borders")
   if (city[0].borders) {
     let region = city[0].borders;
-    console.log(region)
     region.forEach((element) =>{
-      console.log(element)
       const countryBtn = cBtn(element)
       borders.appendChild(countryBtn)
     })
