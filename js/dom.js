@@ -59,20 +59,22 @@ const masterCard = (city) => {
   const div = newE("div");
   div.className = "card mb-3 border-0";
   div.innerHTML = `
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="${city[0].flags.png}" class="img-fluid rounded-start" alt="${
+    <div class="row g-0 justify-content-around">
+      <div class="col-md-4 d-flex">
+        <img src="${
+          city[0].flags.png
+        }" class="w-100 object-fit-contain" style="height: 25rem;" alt="${
     city[0].flags.alt ? city[0].flags.alt : " "
   }">
       </div>
-      <div class="col-md-8">
+      <div class=" col-md-6">
         <div class="card-body">
           <div class="">
             <p class="fs-5 fw-bold">
               ${city[0].name.common}
             </p>
             <div class="row row-cols-1 row-cols-md-2">
-              <div>
+              <div class="fs-6">
                 <p>
                   <span class="fw-semibold">Native Name: </span>
                   <span>${city[0].name.nativeName[native].official}</span>
