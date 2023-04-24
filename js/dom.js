@@ -7,9 +7,11 @@ const generateCard = (country) => {
     let num = country.population
     let formatNum = num.toLocaleString('es-Es', {useGrouping: true})
   const div = newE("div");
-  div.className = "card border border-0 bg-body-tertiary shadow p-0";
+  div.className = "card border border-0 bg-body-tertiary shadow p-0 cardID";
+  div.setAttribute("id", country.name.common)
+  div.setAttribute("type", "button")
   div.innerHTML = `
-    <div class="card-img">
+    <div class="card-img" >
       <img
         class="card-img-top"
         src=${country.flags.png}

@@ -12,6 +12,7 @@ const region3 = await data.getDataRegion(regions[2]);
 const region4 = await data.getDataRegion(regions[3]);
 const region5 = await data.getDataRegion(regions[4]);
 const searchCountry = dom.$("#searchCountry")
+const cards = document.querySelectorAll(".cardID")
 
 dom.manifesCard(datos);
 
@@ -48,3 +49,15 @@ searchCountry.addEventListener("input", function(){
     );
     dom.manifesCard(filteredData);
 })
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const cardId = card.id;
+    console.log('El ID de la tarjeta es: ', cardId);
+  });
+});
+
+
+
+
+
