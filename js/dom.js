@@ -128,9 +128,35 @@ const manifestMasterCard = (card) => {
   masterCardID.appendChild(masterCard(card))
 }
 
+const cBtn = (city) => {
+  const btn = newE("button");
+  btn.className = "btn btn-dark"
+  btn.setAttribute("id", city);
+  btn.innerHTML = city
+  return btn
+}
+
+const borderCountryBTN = (city) => {
+  const borders = $("#borders")
+  if (city[0].borders) {
+    let region = city[0].borders;
+    console.log(region)
+    region.forEach((element) =>{
+      console.log(element)
+      const countryBtn = cBtn(element)
+      borders.appendChild(countryBtn)
+    })
+  }else{
+    let region = ""
+    borders.innerHTML = "Without Border Countries"
+  }
+  
+}
+
 export default {
   $,
   generateCard,
   manifesCard,
   manifestMasterCard,
+  borderCountryBTN,
 };
