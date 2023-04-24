@@ -74,6 +74,7 @@ function addClickEventToCards() {
       dom.$("#secondary").style.display = "block";
       const country = datos.filter((city) => city.name.common == card.id)
       dom.manifestMasterCard(country)
+      dom.languages(country)
       dom.borderCountryBTN(country)
       addClickEventToMasterCard();
     });
@@ -88,6 +89,7 @@ function addClickEventToMasterCard() {
       cardID = card.id;
       const country = datos.filter((city) => city.cca3 == card.id);
       dom.manifestMasterCard(country);
+      dom.languages(country);
       dom.borderCountryBTN(country);
       addClickEventToMasterCard();
     });

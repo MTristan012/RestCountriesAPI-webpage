@@ -123,6 +123,17 @@ const masterCard = (city) => {
   return div;
 };
 
+const languages = (city) => {
+  const lang = $("#lang")
+  const allLang = city[0].languages;
+  console.log(allLang)
+  let lan = []
+  for (const property in allLang) {
+    lan.push(allLang[property]);
+  }
+  lang.innerHTML = lan.toString()
+}
+
 const manifestMasterCard = (card) => {
   const masterCardID = $("#masterCard");
   masterCardID.innerHTML = ""
@@ -157,5 +168,6 @@ export default {
   generateCard,
   manifesCard,
   manifestMasterCard,
+  languages,
   borderCountryBTN,
 };
