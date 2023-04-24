@@ -75,9 +75,23 @@ function addClickEventToCards() {
       const country = datos.filter((city) => city.name.common == card.id)
       dom.manifestMasterCard(country)
       dom.borderCountryBTN(country)
+      addClickEventToMasterCard();
     });
   });
   return cardID
+}
+
+function addClickEventToMasterCard() {
+  const cards = document.querySelectorAll(".nationBtn");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      cardID = card.id;
+      const country = datos.filter((city) => city.cioc == card.id);
+      dom.manifestMasterCard(country);
+      dom.borderCountryBTN(country);
+    });
+  });
+  return cardID;
 }
 
 addClickEventToCards()
