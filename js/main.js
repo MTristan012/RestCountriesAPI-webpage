@@ -23,6 +23,7 @@ backBtn.addEventListener("click", () => {
   dom.$("#secondary").style.display = "none";
   dom.manifesCard(datos);
   searchCountry.value = ""
+  addClickEventToCards();
 });
 
 const searchRegion = dom.$("#regions");
