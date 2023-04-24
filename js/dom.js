@@ -104,8 +104,9 @@ const masterCard = (city) => {
                   <span>${city[0].currencies[coin].name}</span>
                 </p>
                 <p>
-                  <span class="fw-semibold">Capital: </span>
-                  <span>${city[0].capital}</span>
+                  <span class="fw-semibold">Languages: </span>
+                  <span id="lang">
+                  </span>
                 </p>
               </div>
             </div>
