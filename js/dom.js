@@ -129,7 +129,7 @@ const languages = (city) => {
   console.log(allLang)
   let lan = []
   for (const property in allLang) {
-    lan.push(allLang[property]);
+    lan.push(" " + allLang[property]);
   }
   lang.innerHTML = lan.toString()
 }
