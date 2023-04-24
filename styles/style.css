@@ -10,3 +10,7 @@
 .secondary{
   display: none;
 }
+
+#regions, #form{
+  max-width: 300px
+}
