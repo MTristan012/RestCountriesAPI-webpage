@@ -13,7 +13,7 @@ const generateCard = (country) => {
   div.innerHTML = `
     <div class="card-img" >
       <img
-        class="card-img-top"
+        class="w-100 rounded-3 object-fit-cover" style="height: 8rem;"
         src=${country.flags.png}
         alt=${country.flags.alt ? country.flags.alt : " "}
       />
