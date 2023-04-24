@@ -52,6 +52,8 @@ const manifesCard = (card) => {
 };
 
 const masterCard = (city) => {
+  let [coin] = Object.keys(city[0].currencies);
+  let [native] = Object.keys(city[0].name.nativeName)
   let num = city[0].population;
   let formatNum = num.toLocaleString("es-Es", { useGrouping: true });
   const div = newE("div");
@@ -71,12 +73,34 @@ const masterCard = (city) => {
             </p>
             <div>
               <p>
+                <span class="fw-semibold">Native Name: </span>
+                <span>${city[0].name.nativeName[native].official}</span>
+              </p>
+              <p>
                 <span class="fw-semibold">Populations: </span>
                 <span>${formatNum}</span>
               </p>
               <p>
+                <span class="fw-semibold">Sub Region: </span>
+                <span>${city[0].subregion}</span>
+              </p>
+              <p>
                 <span class="fw-semibold">Region: </span>
                 <span>${city[0].region}</span>
+              </p>
+              <p>
+                <span class="fw-semibold">Capital: </span>
+                <span>${city[0].capital}</span>
+              </p>
+            </div>
+            <div>
+              <p>
+                <span class="fw-semibold">Top Level Domain: </span>
+                <span>${city[0].tld}</span>
+              </p>
+              <p>
+                <span class="fw-semibold">Currencies: </span>
+                <span>${city[0].currencies[coin].name}</span>
               </p>
               <p>
                 <span class="fw-semibold">Capital: </span>
