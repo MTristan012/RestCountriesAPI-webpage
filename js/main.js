@@ -4,6 +4,7 @@ import dom from "./dom.js";
 const html = document.querySelector("html")
 const darkBtn = document.querySelector("#dark-mode-button")
 const datos = await data.data;
+let cardID;
 
 dom.manifesCard(datos);
 
@@ -58,10 +59,15 @@ function addClickEventToCards() {
   const cards = document.querySelectorAll(".cardID");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      const cardId = card.id;
-      console.log("El ID de la tarjeta es: ", cardId);
+      cardID = card.id;
+      dom.$("#principal").style.display = "none";
+      dom.$("#secondary").style.display = "block";
+      console.log(card.id)
     });
   });
+
+  return cardID
 }
 
 addClickEventToCards()
+console.log(cardID + "1")
