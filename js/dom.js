@@ -130,7 +130,7 @@ const manifestMasterCard = (card) => {
 
 const cBtn = (city) => {
   const btn = newE("button");
-  btn.className = "btn btn-dark"
+  btn.className = "btn"
   btn.setAttribute("id", city);
   btn.innerHTML = city
   return btn
