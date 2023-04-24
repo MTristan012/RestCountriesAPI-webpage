@@ -1,9 +1,11 @@
 import data from "./data.js";
 import dom from "./dom.js";
 
-const html = document.querySelector("html")
-const darkBtn = document.querySelector("#dark-mode-button")
+const html = dom.$("html");
+const darkBtn = dom.$("#dark-mode-button");
+const backBtn = dom.$("#back")
 const datos = await data.data;
+const searchCountry = dom.$("#searchCountry");
 let cardID;
 
 dom.manifesCard(datos);
@@ -15,6 +17,13 @@ darkBtn.addEventListener("click", () => {
         html.dataset.bsTheme = "light";
     } 
 })
+
+backBtn.addEventListener("click", () => {
+  dom.$("#principal").style.display = "block";
+  dom.$("#secondary").style.display = "none";
+  dom.manifesCard(datos);
+  searchCountry.value = ""
+});
 
 const searchRegion = dom.$("#regions");
 const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
@@ -45,7 +54,7 @@ searchRegion.addEventListener("change", function () {
   }
 });
 
-const searchCountry = dom.$("#searchCountry");
+
 searchCountry.addEventListener("input", function () {
   let searchValue = searchCountry.value;
   const filteredData = datos.filter((country) =>
@@ -65,7 +74,6 @@ function addClickEventToCards() {
       console.log(card.id)
     });
   });
-
   return cardID
 }
 
