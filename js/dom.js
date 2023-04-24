@@ -71,41 +71,48 @@ const masterCard = (city) => {
             <p class="fs-5 fw-bold">
               ${city[0].name.common}
             </p>
-            <div>
-              <p>
-                <span class="fw-semibold">Native Name: </span>
-                <span>${city[0].name.nativeName[native].official}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Populations: </span>
-                <span>${formatNum}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Sub Region: </span>
-                <span>${city[0].subregion}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Region: </span>
-                <span>${city[0].region}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Capital: </span>
-                <span>${city[0].capital}</span>
-              </p>
+            <div class="row row-cols-1 row-cols-md-2">
+              <div>
+                <p>
+                  <span class="fw-semibold">Native Name: </span>
+                  <span>${city[0].name.nativeName[native].official}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Populations: </span>
+                  <span>${formatNum}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Sub Region: </span>
+                  <span>${city[0].subregion}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Region: </span>
+                  <span>${city[0].region}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Capital: </span>
+                  <span>${city[0].capital}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span class="fw-semibold">Top Level Domain: </span>
+                  <span>${city[0].tld}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Currencies: </span>
+                  <span>${city[0].currencies[coin].name}</span>
+                </p>
+                <p>
+                  <span class="fw-semibold">Capital: </span>
+                  <span>${city[0].capital}</span>
+                </p>
+              </div>
             </div>
             <div>
-              <p>
-                <span class="fw-semibold">Top Level Domain: </span>
-                <span>${city[0].tld}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Currencies: </span>
-                <span>${city[0].currencies[coin].name}</span>
-              </p>
-              <p>
-                <span class="fw-semibold">Capital: </span>
-                <span>${city[0].capital}</span>
-              </p>
+              <span class="fw-semibold">Border Countries: </span>
+              <span id="borders">
+              </span>
             </div>
           </div>
         </div>
