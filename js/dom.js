@@ -57,7 +57,7 @@ const masterCard = (city) => {
   let num = city[0].population;
   let formatNum = num.toLocaleString("es-Es", { useGrouping: true });
   const div = newE("div");
-  div.className = "card mb-3";
+  div.className = "card mb-3 border-0";
   div.innerHTML = `
     <div class="row g-0">
       <div class="col-md-4">
