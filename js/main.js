@@ -55,7 +55,6 @@ searchRegion.addEventListener("change", function () {
   }
 });
 
-
 searchCountry.addEventListener("input", function () {
   let searchValue = searchCountry.value;
   const filteredData = datos.filter((country) =>

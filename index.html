@@ -22,6 +22,7 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="style.css">
   <script src="./js/main.js" type="module" defer></script>
   <title>Where in the World?</title>
 </head>
@@ -44,7 +45,7 @@
     <section class="container text-center" id="principal">
         <div class="navbar navbar-expand-lg my-3">
           <div class="container-fluid justify-content-between">
-            <form class="input-group flex-nowrap" id="form">
+            <form class="input-group flex-nowrap" id="form" style="max-width: 300px;">
               <label for="TextInput" class="form-label"></label>
               <span class="input-group-text material-symbols-outlined pointer" id="addon-wrapping">
                 Search
@@ -52,7 +53,7 @@
               <input type="text" id="searchCountry" class="form-control bg-body-tertiary"
                 placeholder="Search for a country...">
             </form>
-            <select class="form-select bg-body-tertiary" aria-label="Default select example" id="regions">
+            <select class="form-select bg-body-tertiary" aria-label="Default select example" id="regions" style="max-width: 300px;">
               <option selected class="regSel">Filter by Region</option>
               <option value="1" class="regSel">Africa</option>
               <option value="2" class="regSel">America</option>

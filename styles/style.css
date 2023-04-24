@@ -11,6 +11,10 @@
   display: none;
 }
 
-#regions, #form{
-  max-width: 300px
+#regions {
+  max-width: 300px;
+} 
+
+#form {
+  max-width: 300px;
 }
