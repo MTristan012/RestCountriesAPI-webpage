@@ -67,9 +67,9 @@ const masterCard = (city) => {
     city[0].flags.alt ? city[0].flags.alt : " "
   }">
       </div>
-      <div class=" col-md-6">
+      <div class="d-flex align-items-center col-md-6">
         <div class="card-body">
-          <div class="">
+          <div class="fs-6">
             <p class="fs-5 fw-bold">
               ${city[0].name.common}
             </p>
@@ -144,7 +144,7 @@ const manifestMasterCard = (card) => {
 
 const cBtn = (city) => {
   const btn = newE("button");
-  btn.className = "btn nationBtn"
+  btn.className = "btn nationBtn bg-body-tertiary m-2";
   btn.setAttribute("id", city);
   btn.innerHTML = city
   return btn
