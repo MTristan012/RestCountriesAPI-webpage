@@ -86,9 +86,10 @@ function addClickEventToMasterCard() {
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       cardID = card.id;
-      const country = datos.filter((city) => city.cioc == card.id);
+      const country = datos.filter((city) => city.cca3 == card.id);
       dom.manifestMasterCard(country);
       dom.borderCountryBTN(country);
+      addClickEventToMasterCard();
     });
   });
   return cardID;
